@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: gray;
+
+  .container {
+    border-radius: 15px;
+    height: 550px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 5px 5px 20px rgb(97, 96, 96);
+    overflow: hidden;
+    position: relative;
+
+    .glass {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background-color: rgba($color: #fff, $alpha: 0.1);
+      backdrop-filter: blur(2px);
+
+      .wide {
+        position: relative;
+        background-color: white;
+        width: 10px;
+        height: 50px;
+
+        top: 40%;
+        left: 28%;
+        border-radius: 5px;
+
+        animation: example 5s linear infinite ;
+        transform-origin: bottom;
+      }
+      .wide::after{
+          display: block;
+          content: '';
+          width: 100%;
+          height: 20%;
+          border-radius: 50%;
+          background-color: red;
+      }
+      @keyframes example {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    }
+    // @keyframes example {
+    //   from {
+    //       transform: rotate(0deg);
+    //   }
+    //   to {
+    //     transform: rotate(359deg);
+    //   }
+    // }
+    .b_circle {
+      position: absolute;
+      background-color: #4285f4;
+      height: 250px;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      top: -20%;
+      left: -40%;
+    }
+    .b2_circle {
+      position: absolute;
+      background-color: #4285f4;
+      height: 250px;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      bottom: -20%;
+      right: -40%;
+    }
+    .div1 {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      background-color: #e93528;
+      border-radius: 100%;
+
+      top: 40%;
+      left: 13%;
+    }
+    .div2 {
+      position: absolute;
+      height: 45px;
+      width: 45px;
+      background-color: #ff0000;
+      border-radius: 100%;
+      top: 65%;
+      left: 10%;
+    }
+    .div3 {
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      background-color: #00b2ff;
+      border-radius: 100%;
+
+      top: 80%;
+      left: 25%;
+    }
+    .div4 {
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      background-color: #4285f4;
+      border-radius: 100%;
+
+      top: 60%;
+      left: 50%;
+    }
+    .div5 {
+      position: absolute;
+      height: 70px;
+      width: 70px;
+      background-color: #fabb05;
+      border-radius: 100%;
+
+      top: 30%;
+      right: 20%;
+    }
+  }
+}
